@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  PingService:
+    image: python:3.7.3-alpine
+    command: sh -c "pip install -r requirements.txt && python pingservice.py"
+    ports:
+      - 8080:8080
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+  ReceiverService:
+    image: python:3.7.3-alpine
+    command: sh -c "pip install -r requirements.txt && python receiverservice.py"
+    working_dir: /app
+    volumes:
+      - ./:/app
