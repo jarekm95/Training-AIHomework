@@ -7,6 +7,7 @@ api = Api(app)
 parser = reqparse.RequestParser()
 todos = {}
 
+
 @api.route('/api/v1/ping')
 class Ping(Resource):
     def post(self):
@@ -14,6 +15,7 @@ class Ping(Resource):
         url = body.get("url")
         url_content = requests.get(url, verify=False).text
         return url_content
+
 
 @api.route('/health')
 class Health(Resource):
