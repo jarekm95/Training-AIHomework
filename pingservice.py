@@ -13,8 +13,8 @@ class Ping(Resource):
     def post(self):
         body = request.json
         url = body.get("url")
-        url_content = requests.get(url, verify=False).text
-        return url_content
+        resp = requests.get(url, verify=False)
+        return resp.json()
 
 
 @api.route('/health')

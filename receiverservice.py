@@ -20,7 +20,7 @@ class Receiver(Resource):
 @api.route('/api/v1/info')
 class Health(Resource):
     def get(self):
-        return '{"Receiver": "Cisco is the best!"}'
+        return {"Receiver": "Cisco is the best!"}
 
 
 if __name__ == '__main__':
